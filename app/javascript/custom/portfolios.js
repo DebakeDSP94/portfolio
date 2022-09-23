@@ -1,26 +1,38 @@
-function setPositions() {
-	$('.card').each(function (index, value) {
-		this.setAttribute('data-pos', index + 1);
-	});
-}
+document.addEventListener('turbolinks:load', function () {
+	let ready = undefined;
+	let set_positions = undefined;
 
-$(() => {
-	setPositions();
-	$('.sortable').sortable({
-		update: function (event, ui) {
-			let updated_order = [];
-			setPositions();
-			$('.card').each(function (index, value) {
-				updated_order.push({
-					id: this.getAttribute('data-id'),
-					position: this.getAttribute('data-pos'),
+	set_positions = function () {
+		$('div[data-id]').each(function (i) {
+			$(this).attr('data-pos', i + 1);
+		});
+	};
+
+	ready = function () {
+		set_positions();
+		$('.sortable').sortable();
+		$('.sortable')
+			.sortable()
+			.bind('sortupdate', function (e, ui) {
+				let updated_order;
+				updated_order = [];
+				set_positions();
+				$('div[data-id]').each(function (i) {
+					updated_order.push({
+						id: $(this).data('id'),
+						position: i + 1,
+					});
+				});
+				return $.ajax({
+					type: 'PUT',
+					url: '/portfolios/sort',
+					data: {
+						order: updated_order,
+					},
 				});
 			});
-			$.ajax({
-				type: 'PUT',
-				url: '/portfolios/sort',
-				data: { order: updated_order },
-			});
-		},
-	});
+		return;
+	};
+
+	$(document).ready(ready);
 });
