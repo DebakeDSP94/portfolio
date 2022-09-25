@@ -3,4 +3,4 @@
 //=link blogs.css
 //= link portfolios.css
 //= link video_bg_small.mp4
-//= link home_bg.jpg
+//= link home_bg.png
