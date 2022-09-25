@@ -97,3 +97,11 @@ gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'devise', branch: 'rails_7', github: 'DavidColby/devise'
 
 gem 'wilson_view_tool', '~> 0.1.0'
+
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
+
+gem 'carrierwave-aws', '~> 1.5'
+
+gem 'mini_magick', '~> 4.11'
+
+gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
