@@ -14,7 +14,8 @@
 		"sass": "^1.54.9",
 		"sortablejs": "^1.15.0",
 		"stimulus": "npm:@hotwired/stimulus",
-		"stimulus_reflex": "3.5.0-pre8"
+		"stimulus_reflex": "3.5.0-pre8",
+		"vanilla-nested": "^1.7.0"
 	},
 	"scripts": {
 		"build": "node esbuild.config.js",

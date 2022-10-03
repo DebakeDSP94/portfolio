@@ -319,6 +319,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    vanilla_nested (1.7.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -374,6 +375,7 @@ DEPENDENCIES
   stimulus_reflex (= 3.5.0.pre8)
   turbo-rails
   tzinfo-data
+  vanilla_nested
   web-console
   webdrivers
   wilson_view_tool (~> 0.1.0)
