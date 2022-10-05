@@ -21,15 +21,9 @@
 
  <%= form_with(model: blog) do |form| %>
   <% if blog.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
-      <ul>
-        <% blog.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% blog.errors.full_messages.each do |error| %>
+          <%= render "shared/flash", level: :error, content: error %>
         <% end %>
-      </ul>
-    </div>
   <% end %>
 
   <div class="form-group">

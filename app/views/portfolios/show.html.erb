@@ -15,8 +15,8 @@
       <% end %>
       <% if logged_in?(:admin) %>
       <div>
-      <%= link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: 'btn btn-warning' %>
-      <%= button_to 'Delete Item', @portfolio_item, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin) %>
+      <%= link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: 'btn btn-outline-warning' %>
+      <%= button_to 'Delete Item', @portfolio_item, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' if logged_in?(:admin) %>
       </div>
       <% end %>
     </div>

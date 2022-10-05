@@ -9,7 +9,6 @@ import CableReady from 'cable_ready';
 import mrujs from 'mrujs';
 import { CableCar } from 'mrujs/plugins';
 import 'vanilla-nested';
-
 import * as bootstrap from 'bootstrap';
 window.bootstrap = bootstrap;
 import './custom/portfolios';

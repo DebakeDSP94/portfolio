@@ -11,6 +11,7 @@
 
     <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
@@ -31,6 +32,8 @@
         <%= render 'shared/blog_footer' %>
 
         <%= source_helper("blog") %>
+        <%= render 'shared/flash_container' %>
+
     </div>
   </body>
 </html>

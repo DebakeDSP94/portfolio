@@ -1,4 +1,9 @@
 <%= form_with model: @portfolio_item do |form| %>
+  <% if portfolio_item.errors.any? %>
+        <% portfolio_item.errors.full_messages.each do |error| %>
+          <%= render "shared/flash", level: :error, content: error %>
+        <% end %>
+  <% end %>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -29,8 +34,8 @@
 
   <h2>Technologies Used</h2>
     <div>
-      <%= form_with model: @technologies do |form| %>
-        <%= render partial: 'technology_fields', :locals => { :form => form }  %>
+      <%= form.fields_for :technologies do |technology_form| %>
+        <%= render partial: 'technology_fields', :locals => { :form => technology_form }  %>
       <% end %>
     </div>
     <div>

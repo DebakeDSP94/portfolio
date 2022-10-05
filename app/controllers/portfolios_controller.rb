@@ -23,7 +23,7 @@ class PortfoliosController < ApplicationController
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully created.' }
       else
-        format.html { render :new }
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
@@ -36,7 +36,7 @@ class PortfoliosController < ApplicationController
       if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully updated.' }
       else
-        format.html { render :edit }
+        format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end

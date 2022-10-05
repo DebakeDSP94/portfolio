@@ -209,3 +209,25 @@ body {
 .app-footer {
 	color: white;
 }
+
+.bread {
+	display: flex;
+	position: absolute;
+	right: 100px;
+	bottom: 0px;
+	padding: 20px;
+}
+
+.bread > .card-body {
+	color: white;
+}
+
+.close-flash {
+	color: white;
+}
+
+.svgbtn {
+	display: inline-block;
+	fill: white;
+	z-index: 100;
+}
