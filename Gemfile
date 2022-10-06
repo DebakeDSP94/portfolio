@@ -75,39 +75,21 @@ group :test do
 end
 
 gem "stimulus_reflex", "= 3.5.0.pre8"
-
 gem "bootstrap", "4.0.0.alpha6"
-
 gem 'friendly_id', '~> 5.4.0'
-
 gem 'jquery-rails', '~> 4.5'
-
 gem 'pry-byebug'
-
 gem 'petergate', '~> 3.0'
-
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
-
 gem 'font-awesome-sass', '~> 5.9'
-
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
-
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
-
 gem 'devise', branch: 'rails_7', github: 'DavidColby/devise'
-
 gem 'wilson_view_tool', '~> 0.1.0'
-
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
-
 gem 'carrierwave-aws', '~> 1.5'
-
 gem 'mini_magick', '~> 4.11'
-
 gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
-
 gem 'vanilla_nested'
-
 gem "inline_svg", "~> 1.8"
-
 gem 'twitter', '~> 7.0'
