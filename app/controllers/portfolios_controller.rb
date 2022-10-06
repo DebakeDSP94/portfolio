@@ -21,7 +21,7 @@ class PortfoliosController < ApplicationController
 
     respond_to do |format|
       if @portfolio_item.save
-        format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully created.' }
+        format.html { redirect_to portfolios_path, success: 'Portfolio item was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -34,7 +34,7 @@ class PortfoliosController < ApplicationController
   def update
     respond_to do |format|
       if @portfolio_item.update(portfolio_params)
-        format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully updated.' }
+        format.html { redirect_to portfolios_path, success: 'Portfolio item was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -51,7 +51,7 @@ class PortfoliosController < ApplicationController
     # Redirect
     #redirect_to portfolios_path, status: :see_other
     respond_to do |format|
-      format.html { redirect_to portfolios_url, notice: 'Record was removed.' }
+      format.html { redirect_to portfolios_url, status: :see_other }
     end
   end
 

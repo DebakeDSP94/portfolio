@@ -17,3 +17,5 @@ mrujs.start({
 	plugins: [new CableCar(CableReady)],
 });
 console.log('application js here');
+import "@hotwired/turbo-rails"
+import "./controllers"

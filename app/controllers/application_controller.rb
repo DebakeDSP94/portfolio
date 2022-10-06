@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
   include SetSource
   include CurrentUserConcern
   include DefaultPageContent
+  add_flash_types :info, :success, :warning
 end

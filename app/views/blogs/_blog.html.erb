@@ -6,7 +6,8 @@
     <p class="blog-post-meta">
     <%= link_to blog.status, toggle_status_blog_path(blog) %> /
     <%= link_to 'Edit', edit_blog_path(blog) %> /
-    <%= button_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' if logged_in?(:admin) %>
+    <%= button_to 'Delete Post', blog, data: { turbo_method: :delete,
+                        turbo_confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' if logged_in?(:admin) %>
     </p>
   <% end %>
 
