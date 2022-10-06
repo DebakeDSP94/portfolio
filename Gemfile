@@ -109,3 +109,5 @@ gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 gem 'vanilla_nested'
 
 gem "inline_svg", "~> 1.8"
+
+gem 'twitter', '~> 7.0'
