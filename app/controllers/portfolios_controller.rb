@@ -51,7 +51,7 @@ class PortfoliosController < ApplicationController
     # Redirect
     #redirect_to portfolios_path, status: :see_other
     respond_to do |format|
-      format.html { redirect_to portfolios_url, status: :see_other }
+      format.html { redirect_to portfolios_path, status: :see_other }
     end
   end
 

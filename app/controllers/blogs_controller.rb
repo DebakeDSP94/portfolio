@@ -6,11 +6,13 @@ class BlogsController < ApplicationController
   # GET /blogs or /blogs.json
   def index
     @blogs = Blog.page(params[:page]).per(5)
-    @page_title = "My Portfolio Blog"
+    @page_title = 'My Portfolio Blog'
   end
 
   # GET /blogs/1 or /blogs/1.json
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
     @page_title = @blog.title
     @seo_keywords = @blog.body
   end
@@ -53,7 +55,7 @@ class BlogsController < ApplicationController
     @blog.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path, status: :see_other }
+      format.html { redirect_to blogs_path, status: :see_other }
     end
   end
 
