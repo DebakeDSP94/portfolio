@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
 
   devise_scope :user do
     get "users", to: "devise/sessions#new"
@@ -27,6 +26,6 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
-
+  mount ActionCable.server => '/cable'
   get root to: 'pages#home'
 end
