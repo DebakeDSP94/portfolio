@@ -7,11 +7,10 @@
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
 
-    <meta name="keywords" content="<%= @seo_keywords %>" />
+     <meta name="keywords" content="<% @seo_keywords %>" />
 
     <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
   </head>
 
   <body>
@@ -20,20 +19,14 @@
     <%= render 'shared/blog_masthead' %>
 
     <div class="container">
-
       <div class="row">
-
         <%= yield %>
-
         <%= render 'shared/blog_sidebar' %>
-
       </div>
 
-        <%= render 'shared/blog_footer' %>
-
-        <%= source_helper("blog") %>
-        <%= render 'shared/flash_container' %>
-
+      <%= render 'shared/blog_footer' %>
+      <%= source_helper("blog") %>
+      <%= render 'shared/flash_container' %>
     </div>
   </body>
 </html>

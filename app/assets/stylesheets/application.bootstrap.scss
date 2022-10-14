@@ -1,6 +1,6 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
-
+@import 'trix/dist/trix';
 /*
  * Globals
  */
@@ -243,4 +243,11 @@ body {
 
 .tech-news > .card {
 	padding: 30px;
+}
+.trix-comment-group trix-editor {
+	min-height: 5em;
+	max-height: 10em;
+}
+.trix-comment-group .trix-button-group {
+	display: none;
 }

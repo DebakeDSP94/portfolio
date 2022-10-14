@@ -8,14 +8,15 @@ import consumer from './channels/consumer';
 import CableReady from 'cable_ready';
 import mrujs from 'mrujs';
 import { CableCar } from 'mrujs/plugins';
+import * as Turbo from '@hotwired/turbo';
+window.Turbo = Turbo;
 import 'vanilla-nested';
 import * as bootstrap from 'bootstrap';
 window.bootstrap = bootstrap;
-import './custom/portfolios';
 
 mrujs.start({
 	plugins: [new CableCar(CableReady)],
 });
 console.log('application js here');
-import "@hotwired/turbo-rails"
-import "./controllers"
+import 'trix';
+import '@rails/actiontext';

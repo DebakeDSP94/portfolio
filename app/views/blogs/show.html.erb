@@ -7,4 +7,7 @@
   <p>
   <%= @blog.body %>
 
+  <%= render partial: 'comments/comments', locals: {commentable: @blog} %>
+  <%= render partial: 'comments/form', locals: {commentable: @blog} %>
+
 </div>

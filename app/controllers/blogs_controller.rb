@@ -1,9 +1,8 @@
-class BlogsController < ApplicationController
+class BlogsController < CommentsController
   before_action :set_blog, only: %i[ show edit update destroy toggle_status ]
   access all: [:show, :index], user: { except: [:destroy, :new, :create, :update, :edit, :toggle_status] }, admin: :all
   layout "blog"
 
-  # GET /blogs or /blogs.json
   def index
     @blogs = Blog.page(params[:page]).per(5)
     @page_title = "My Portfolio Blog"
@@ -11,6 +10,8 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1 or /blogs/1.json
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
     @page_title = @blog.title
     @seo_keywords = @blog.body
   end
@@ -67,12 +68,11 @@ class BlogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
   def set_blog
     @blog = Blog.friendly.find(params[:id])
   end
 
-    # Only allow a list of trusted parameters through.
   def blog_params
     params.require(:blog).permit(:title, :body, :topic_id)
   end

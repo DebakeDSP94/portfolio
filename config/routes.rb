@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :blogs do
+    resources :comments, module: :blogs, only: %i[index create]
+  end
+
   devise_scope :user do
     get "users", to: "devise/sessions#new"
   end
-
 
   devise_for :users, path: '',
                 path_names: { 

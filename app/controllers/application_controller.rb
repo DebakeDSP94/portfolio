@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include CableReady::Broadcaster
   protect_from_forgery with: :exception
   include DeviseWhitelist
   include SetSource
