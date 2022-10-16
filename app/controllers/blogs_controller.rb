@@ -12,7 +12,6 @@ class BlogsController < CommentsController
     @page_title = "My Portfolio Blog"
   end
 
-  # GET /blogs/1 or /blogs/1.json
   def show
     if logged_in?(:admin) || @blog.published?
       @blog = Blog.includes(:comments).friendly.find(params[:id])
@@ -21,17 +20,15 @@ class BlogsController < CommentsController
       @seo_keywords = @blog.body
     else redirect_to blogs_path, notice: "You are not authorized to access this page."
     end
+  end
 
-  # GET /blogs/new
   def new
     @blog = Blog.new
   end
 
-  # GET /blogs/1/edit
   def edit
   end
 
-  # POST /blogs or /blogs.json
   def create
     @blog = Blog.new(blog_params)
 
@@ -44,7 +41,6 @@ class BlogsController < CommentsController
     end
   end
 
-  # PATCH/PUT /blogs/1 or /blogs/1.json
   def update
     respond_to do |format|
       if @blog.update(blog_params)
@@ -55,7 +51,6 @@ class BlogsController < CommentsController
     end
   end
 
-  # DELETE /blogs/1 or /blogs/1.json
   def destroy
     @blog.destroy
 
