@@ -14,11 +14,13 @@ class BlogsController < CommentsController
 
   # GET /blogs/1 or /blogs/1.json
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
-    @page_title = @blog.title
-    @seo_keywords = @blog.body
-  end
+    if logged_in?(:admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
+      @page_title = @blog.title
+      @seo_keywords = @blog.body
+    else redirect_to blogs_path, notice: "You are not authorized to access this page."
+    end
 
   # GET /blogs/new
   def new
