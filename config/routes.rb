@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :topics, only: [:index, :show]
+
 
   resources :blogs do
     resources :comments, module: :blogs, only: %i[index create]

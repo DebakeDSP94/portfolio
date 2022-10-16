@@ -9,7 +9,7 @@ class Blog < ApplicationRecord
 
   has_many :comments, as: :commentable, dependent: :destroy, counter_cache: :commentable_count
 
-  belongs_to :topic
+  belongs_to :topic, optional: true
 
   def self.special_blogs
     all
