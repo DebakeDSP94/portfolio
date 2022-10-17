@@ -20,6 +20,6 @@ class Blog < ApplicationRecord
   end
 
   def self.recent
-    order("created_at DESC")
+    order("updated_at DESC")
   end
 end

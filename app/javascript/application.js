@@ -20,3 +20,5 @@ mrujs.start({
 console.log('application js here');
 import 'trix';
 import '@rails/actiontext';
+import "trix"
+import "@rails/actiontext"

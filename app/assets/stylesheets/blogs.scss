@@ -1,8 +1,9 @@
+@import 'trix/dist/trix';
+@import 'actiontext';
 @import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
-@import 'trix/dist/trix.css';
-@import 'actiontext';
+
 /*
  * Globals
  */
@@ -202,23 +203,6 @@ h6,
 	height: 40px;
 }
 
-.trix-comment-group trix-editor {
-	min-height: 5em;
-	max-height: 15em;
-	border: 1px solid grey;
-}
-.trix-comment-group .trix-button-group {
-	display: none;
-}
-
-.trix-button--icon-increase-nesting-level,
-.trix-button--icon-decrease-nesting-level,
-.trix-button--icon-strike,
-.trix-button--icon-code,
-.trix-button-group.trix-button-group--file-tools {
-	display: none;
-}
-
 .comment {
 	padding: 10px;
 }
@@ -234,4 +218,9 @@ h6,
 
 .comment-name {
 	font-weight: 700;
+}
+
+.trix-button--icon-increase-nesting-level,
+.trix-button--icon-decrease-nesting-level {
+	display: none;
 }
