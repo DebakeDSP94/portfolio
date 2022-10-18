@@ -6,6 +6,7 @@ class Portfolio < ApplicationRecord
 
   validates_presence_of :title, :body
 
+  has_rich_text :body
   mount_uploader :thumb_image, PortfolioUploader
   mount_uploader :main_image, PortfolioUploader
 

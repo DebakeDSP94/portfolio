@@ -1,3 +1,29 @@
+User.create!(
+  email: 'admin@test.com',
+  password: 'password',
+  password_confirmation: 'password',
+  name: 'Admin User',
+  roles: 'admin'
+)
+
+User.create!(
+  email: 'stuartwilson94@gmail.com',
+  password: 'Mofesto7A$$',
+  password_confirmation: 'Mofesto7A$$',
+  name: 'Stuart Wilson',
+  roles: 'admin'
+)
+
+puts '2 Admin user created'
+
+User.create!(
+  email: 'test@test.com',
+  password: 'password',
+  password_confirmation: 'password',
+  name: 'regular User',
+  roles: 'user'
+)
+
 3.times do |topic|
   Topic.create!(title: "Topic #{topic}")
 end
@@ -7,7 +33,7 @@ puts "3 Topics created"
 10.times do |blog|
   Blog.create!(
     title: "My blog Post #{blog + 1}",
-    body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe minima quas quasi expedita! At, quia. Facere, quia quaerat at consequatur ab pariatur animi omnis est! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure earum sequi error rerum recusandae unde possimus neque dolor. Quam iure esse recusandae voluptas, inventore odit hic laudantium? Rem, fuga maiores?",
+    body: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe minima quas quasi expedita! At, quia. Facere, quia quaerat at consequatur ab pariatur animi omnis est! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure earum sequi error rerum recusandae unde possimus neque dolor. Quam iure esse recusandae voluptas, inventore odit hic laudantium? Rem, fuga maiores?',
     topic_id: Topic.last.id
   )
 end

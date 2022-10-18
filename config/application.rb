@@ -2,6 +2,8 @@ require_relative "boot"
 
 require "rails/all"
 require "dotenv-rails"
+require "action_view/railtie"
+require "action_cable/engine"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -11,7 +13,7 @@ module PortfolioApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-
+    config.eager_load_paths << "#{Rails.root}/lib"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -19,5 +21,6 @@ module PortfolioApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.active_job.queue_adapter = :sidekiq
   end
 end

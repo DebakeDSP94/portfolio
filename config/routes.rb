@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  resources :topics, only: [:index, :show]
+
+
+  resources :blogs do
+    resources :comments, module: :blogs, only: %i[index create]
+  end
 
   devise_scope :user do
     get "users", to: "devise/sessions#new"
   end
-
 
   devise_for :users, path: '',
                 path_names: { 
@@ -19,6 +24,7 @@ Rails.application.routes.draw do
 
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'
+  get 'tech-news', to: 'pages#tech_news'
 
   resources :blogs do
     member do

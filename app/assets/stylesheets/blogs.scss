@@ -1,7 +1,18 @@
+@import 'trix/dist/trix';
+@import 'actiontext';
 @import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+@font-face {
+	font-family: 'Lato';
+	src: font-url('Lato-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Roboto Slab';
+	src: font-url('RobotoSlab-Regular.ttf');
+}
 /*
  * Globals
  */
@@ -13,7 +24,7 @@
 }
 
 body {
-	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-family: 'Lato', sans-serif;
 	color: #555;
 }
 
@@ -29,7 +40,7 @@ h5,
 .h5,
 h6,
 .h6 {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
 	font-weight: normal;
 	color: #333;
 }
@@ -158,6 +169,7 @@ h6,
  */
 
 .blog-footer {
+	margin-top: 20px;
 	padding: 2.5rem 0;
 	color: #999;
 	text-align: center;
@@ -193,4 +205,44 @@ h6,
 	display: inline-block;
 	fill: white;
 	z-index: 100;
+}
+
+.chat-icon {
+	width: 40px;
+	height: 40px;
+}
+
+.comment {
+	padding: 10px;
+}
+
+.comment-card {
+	margin-bottom: 10px;
+}
+
+.comment-attribution {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.comment-name {
+	font-weight: 700;
+}
+
+.trix-button--icon-increase-nesting-level,
+.trix-button--icon-decrease-nesting-level {
+	display: none;
+}
+
+.blogcrumb a {
+	font-size: 1.25em;
+	margin: 0px 10px 0px 10px;
+}
+
+.blog-nav {
+	margin-bottom: 30px;
+}
+
+.blog-sidebar-source {
+	margin-top: 20px;
 }
