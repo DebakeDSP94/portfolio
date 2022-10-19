@@ -24,6 +24,14 @@ User.create!(
   roles: 'user'
 )
 
+User.create!(
+  email: 'testing@test.com',
+  password: 'password',
+  password_confirmation: 'password',
+  name: 'Sandbox User',
+  roles: 'testing'
+)
+
 3.times do |topic|
   Topic.create!(title: "Topic #{topic}")
 end

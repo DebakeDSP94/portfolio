@@ -1,4 +1,4 @@
- <%= form_with(model: blog) do |form| %>
+<%= form_with(model: blog) do |form| %>
   <% if blog.errors.any? %>
         <% blog.errors.full_messages.each do |error| %>
           <%= render "shared/flash", level: :error, content: error %>
