@@ -2,10 +2,10 @@ class BlogsController < CommentsController
   before_action :set_blog, only: %i[ show edit update destroy toggle_status ]
   before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toggle_status]
   layout "blog"
-  access all: [:show, :index], user: { except: [:destroy, :new, :create, :update, :edit, :toggle_status] }, admin: :all
+  access all: [:show, :index], user: { except: [:destroy, :new, :create, :update, :edit, :toggle_status] }, admin: :all, testing: { except: [:destroy, :create, :update]}
 
   def index
-    if logged_in?(:admin)
+    if logged_in?(:admin) || logged_in?(:testing)
       @blogs = Blog.recent.page(params[:page]).per(5)
     else
       @blogs = Blog.published.recent.page(params[:page]).per(5)
@@ -14,7 +14,7 @@ class BlogsController < CommentsController
   end
 
   def show
-    if logged_in?(:admin) || @blog.published?
+    if logged_in?(:admin) || logged_in?(:testing) || @blog.published?
       @blog = Blog.includes(:comments).friendly.find(params[:id])
       @comment = Comment.new
       @page_title = @blog.title
@@ -61,9 +61,9 @@ class BlogsController < CommentsController
   end
 
   def toggle_status
-    if @blog.draft?
+    if @blog.draft? && logged_in?(:admin)
       @blog.published!
-    elsif @blog.published?
+    elsif @blog.published? && logged_in?(:admin)
       @blog.draft!
     end
     redirect_to blogs_url, success: 'Post status has been updated.'

@@ -5,4 +5,5 @@
       <%= render partial: 'portfolio_item', collection: @portfolio_items.order(position: :asc) %>
     </div>
   </div>
+<%= link_to "Create New Item", new_portfolio_path if logged_in?(:admin) || logged_in?(:testing) %>
 </div>

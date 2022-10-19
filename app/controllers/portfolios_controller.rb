@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: %i[ show edit update destroy move ]
-  access all: [:show, :index, :angular], user: { except: [:destroy, :new, :create, :update, :edit, :move] }, admin: :all
+  access all: [:show, :index, :angular], user: { except: [:destroy, :new, :create, :update, :edit, :move] }, admin: :all, testing: { except: [:destroy, :create, :update]}
   layout "portfolio"
 
   def index
@@ -67,6 +67,7 @@ class PortfoliosController < ApplicationController
 
   def portfolio_params
     params.require(:portfolio).permit(:title,
+                                      :position,
                                       :subtitle,
                                       :body,
                                       :main_image,
