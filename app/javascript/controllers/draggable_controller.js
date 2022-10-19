@@ -17,7 +17,7 @@ export default class extends ApplicationController {
 		new Sortable(target, {
 			group: 'shared',
 			animation: 100,
-			sort: false,
+			sort: true,
 			onEnd: this.end.bind(this),
 		});
 	}

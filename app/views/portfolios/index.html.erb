@@ -1,7 +1,7 @@
 <div class="album text-muted">
   <div class="container">
       <%= source_helper("alert alert-warning") %>
-    <div class="row sortable" data-controller="drag" data-drag-target="list">
+    <div class="row sortable" data-controller="drag" data-drag-target="list" data-drag-url-value="" data-drag-attribute-value="portfolio_item[position]">
       <%= render partial: 'portfolio_item', collection: @portfolio_items.order(position: :asc) %>
     </div>
   </div>
