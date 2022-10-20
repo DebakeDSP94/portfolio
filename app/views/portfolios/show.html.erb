@@ -13,11 +13,12 @@
       <% @portfolio_item.technologies.each do |t| %>
       <p><%= t.name %></p>
       <% end %>
-      <% if logged_in?(:admin) || logged_in?(:testing) %>
-        <div>
-          <%= link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: 'btn btn-outline-warning' %>
-          <%= button_to 'Delete Item', @portfolio_item, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %>
-        </div>
+      <% if authorized_to %>
+        <nav class="breadcrumb blogcrumb">
+          <%= link_to fa_icon('pencil-square-o'), edit_portfolio_path(@portfolio_item) %>
+          <%= link_to fa_icon('trash'), @portfolio_item, data: { turbo_method: :delete,
+                        turbo_confirm: 'Are you sure?' } %>
+        </nav>
       <% end %>
     </div>
   </div>

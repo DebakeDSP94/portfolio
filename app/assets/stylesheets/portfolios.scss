@@ -2,6 +2,8 @@
 @import 'actiontext';
 @import 'bootstrap';
 @import 'jquery-ui';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 @font-face {
 	font-family: 'Lato';
@@ -122,4 +124,9 @@ footer p {
 .trix-button--icon-code,
 .trix-button-group.trix-button-group--file-tools {
 	display: none;
+}
+
+.blogcrumb a {
+	font-size: 1.25em;
+	margin: 0px 10px 0px 10px;
 }

@@ -2,7 +2,8 @@
   <div class="container">
     <p class="float-right">
       <%= link_to "View all portfolio items", portfolios_path %> | 
-      <a href="#">Back to top</a>
+      <a href="#">Back to top</a> | 
+      <%= link_to "Create New Item", new_portfolio_path if authorized_to %>
     </p>
     
     <p><%= copyright_generator %></p>

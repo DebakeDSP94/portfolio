@@ -76,4 +76,8 @@ module ApplicationHelper
       'bg-info'
     end
   end
+
+  def authorized_to
+    logged_in?(:admin) || logged_in?(:testing)
+  end
 end
