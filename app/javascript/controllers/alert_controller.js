@@ -1,10 +1,12 @@
+console.log('alert controller here');
+
 import { Controller } from 'stimulus';
 
 export default class extends Controller {
 	static values = {
 		closeAfter: {
 			type: Number,
-			default: 3500,
+			default: 2500,
 		},
 		removeAfter: {
 			type: Number,
