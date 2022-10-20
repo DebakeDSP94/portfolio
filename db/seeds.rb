@@ -60,8 +60,8 @@ end
     title: "Portfolio title: #{portfolio_item + 1}",
     subtitle: "Ruby on Rails",
     body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aperiam vitae, cupiditate ipsam soluta, necessitatibus consectetur omnis asperiores ex neque sunt quis magni possimus repudiandae perferendis, accusantium ab velit laborum modi! Corrupti sed nisi nihil?",
-    main_image: "https://unsplash.it/600/400?image=#{img_number}",
-    thumb_image: "https://unsplash.it/350/250?image=#{img_number}"
+    main_image: "https://via.placeholder.com/600x400",
+    thumb_image: "https://via.placeholder.com/350x200"
   )
 end
 
@@ -71,8 +71,8 @@ end
     title: "Portfolio title: #{portfolio_item + 1}",
     subtitle: "Angular",
     body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aperiam vitae, cupiditate ipsam soluta, necessitatibus consectetur omnis asperiores ex neque sunt quis magni possimus repudiandae perferendis, accusantium ab velit laborum modi! Corrupti sed nisi nihil?",
-    main_image: "https://unsplash.it/600/400?image=#{img_number}",
-    thumb_image: "https://unsplash.it/350/250?image=#{img_number}"
+    main_image: "https://via.placeholder.com/600x400",
+    thumb_image: "https://via.placeholder.com/350x200"
   )
 end
 
