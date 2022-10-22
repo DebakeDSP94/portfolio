@@ -2,7 +2,7 @@
 	"name": "app",
 	"private": "true",
 	"dependencies": {
-		"@hotwired/stimulus": "^3.1.0",
+		"@hotwired/stimulus": "npm:@hotwired/stimulus",
 		"@hotwired/turbo-rails": "^7.2.0",
 		"@popperjs/core": "^2.11.6",
 		"@rails/actioncable": "^7.0.4",
@@ -15,7 +15,7 @@
 		"jquery-ui": "^1.13.2",
 		"mrujs": "^0.10.1",
 		"popper.js": "^1.16.1",
-		"sass": "^1.54.9",
+		"sass": "^1.55.0",
 		"sortablejs": "^1.15.0",
 		"stimulus": "npm:@hotwired/stimulus",
 		"stimulus_reflex": "3.5.0-pre8",
