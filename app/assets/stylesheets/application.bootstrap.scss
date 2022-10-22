@@ -3,16 +3,6 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-@font-face {
-	font-family: 'Lato';
-	src: font-url('LatoRegular.ttf');
-}
-
-@font-face {
-	font-family: 'Roboto Slab';
-	src: font-url('RobotoSlabRegular.ttf');
-}
-
 /*
  * Globals
  */
@@ -230,7 +220,7 @@ h6,
 	z-index: -100;
 	// -webkit-transform: translateX(-50%) translateY(-50%);
 	// transform: translateX(-50%) translateY(-50%);
-	background: image-url('home_bg.png');
+	background-image: url('/img/homebg.png');
 	background-size: cover;
 }
 

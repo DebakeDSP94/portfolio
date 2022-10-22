@@ -5,16 +5,6 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-@font-face {
-	font-family: 'Lato';
-	src: font-url('LatoRegular.ttf');
-}
-
-@font-face {
-	font-family: 'Roboto Slab';
-	src: font-url('RobotoSlabRegular.ttf');
-}
-
 :root {
 	--jumbotron-padding-y: 3rem;
 }

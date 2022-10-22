@@ -6,6 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
+
     <%= favicon_link_tag 'favicons/favicon.ico' %>
 
     <%= stylesheet_link_tag "application", media: 'all', "data-turbo-track": "reload" %>
@@ -27,7 +29,7 @@
             autoplay: true,
             loop: true,
             muted: true,
-            poster: 'home_bg.png'
+            poster: 'homebg.png'
           ) %>
 
           <%= render "shared/application_nav" %>
