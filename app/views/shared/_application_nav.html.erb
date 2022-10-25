@@ -1,9 +1,30 @@
-<div class="masthead clearfix">
+<nav class="navbar navbar-toggleable-md navbar-dark bg-clear">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="container">
+    <%= link_to "Stuart Wilson", root_path, class: 'navbar-brand' %>
+    <div class="collapse navbar-collapse nav-masthead" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <%= nav_helper 'nav-link', 'li'%>
+        <%= login_helper 'nav-link' %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<%#
+
+ <div class="masthead clearfix">
   <div class="inner">
     <h3 class="masthead-brand">Stuart Wilson</h3>
     <nav class="nav nav-masthead app-nav">
       <%= nav_helper 'nav-link', 'span' %>
-      <%= login_helper 'nav-link' %>
-    </nav>
+<%#      <%= login_helper 'nav-link' %>
+<%#    </nav>
   </div>
-</div>
+</div> 
+<%
+=end%>

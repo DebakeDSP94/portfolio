@@ -20,6 +20,8 @@
   </head>
 
   <body>
+    <%= render "shared/application_nav" %>
+
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -32,7 +34,6 @@
             poster: 'homebg.png'
           ) %>
 
-          <%= render "shared/application_nav" %>
           <%= yield %>
           <%= render "shared/application_footer" %>
           <%= render 'shared/flash_container' %>

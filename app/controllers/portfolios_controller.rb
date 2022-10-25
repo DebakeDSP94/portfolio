@@ -1,14 +1,10 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: %i[ show edit update destroy move ]
-  access all: [:show, :index, :angular], user: { except: [:destroy, :new, :create, :update, :edit, :move] }, admin: :all, testing: { except: [:destroy, :create, :update]}
+  access all: [:show, :index], user: { except: [:destroy, :new, :create, :update, :edit, :move] }, admin: :all, testing: { except: [:destroy, :create, :update]}
   layout "portfolio"
 
   def index
     @portfolio_items = Portfolio.by_position
-  end
-
-  def angular
-    @angular_portfolio_items = Portfolio.angular
   end
 
   def new
