@@ -56,7 +56,7 @@ class BlogsController < CommentsController
     @blog.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path, status: :see_other }
+      format.html { redirect_to blogs_url, status: :see_other }
     end
   end
 
