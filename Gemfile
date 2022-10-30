@@ -115,4 +115,3 @@ gem "sidekiq", "~> 6.5"
 
 gem "hotwire-rails", "~> 0.1.3"
 gem "cable_ready", "~> 5.0.pre8"
-gem "rack-timeout"

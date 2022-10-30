@@ -9,6 +9,8 @@ Rails.application.config.assets.paths << Rails.root.join("node_modules/bootstrap
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
+
+
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
@@ -16,3 +18,4 @@ Rails.application.config.assets.precompile += %w( .ttf )
 Rails.application.config.assets.precompile += %w(portfolio.scss)
 Rails.application.config.assets.precompile += %w(blogs.scss)
 Rails.application.config.assets.precompile += %w(application.bootstrap.scss)
+
