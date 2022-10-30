@@ -12,3 +12,6 @@ application.register('drag', DragController);
 
 import HelloController from './hello_controller.js';
 application.register('hello', HelloController);
+
+import TrixMarkController from './trix_mark_controller.js';
+application.register('trix-mark', TrixMarkController);
