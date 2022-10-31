@@ -37,6 +37,7 @@ class BlogsController < CommentsController
       if @blog.save
         format.html { redirect_to blog_url(@blog), success: "Blog was successfully created." }
       else
+        flash[:danger] = "Blog must have title, body and topic."
         format.html { render :new, status: :unprocessable_entity }
       end
     end
