@@ -343,3 +343,9 @@ h6,
 .middle {
 	margin-bottom: 30px;
 }
+
+.skill {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

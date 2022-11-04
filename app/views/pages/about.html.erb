@@ -10,8 +10,11 @@
         <%= image_tag "profile.jpg", width: 250, alt: "Profile Image" %>
         <div class="skills">
           <% @skills.each do |skill| %>
-            <div class="skill">
-              <h4><%= skill.title %><h4>
+            <div class="skill-container">
+              <div class="skill">
+                <%= image_tag "logos/#{skill.title}.svg", height: 30 %>
+                <h4><%= skill.title %><h4>
+              </div>
               <div class="progress">
                 <div 
                 class="progress-bar progress-bar-striped bg-warning"

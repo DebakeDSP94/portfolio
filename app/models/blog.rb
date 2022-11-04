@@ -6,6 +6,7 @@ class Blog < ApplicationRecord
   validates_presence_of :title, :body, :topic_id
 
   has_rich_text :body
+  has_many_attached :images, dependent: :destroy
 
   has_many :comments, as: :commentable, dependent: :destroy, counter_cache: :commentable_count
 

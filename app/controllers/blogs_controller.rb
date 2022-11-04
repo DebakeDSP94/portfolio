@@ -6,9 +6,9 @@ class BlogsController < CommentsController
 
   def index
     if logged_in?(:admin) || logged_in?(:testing)
-      @blogs = Blog.recent.page(params[:page]).per(5)
+      @blogs = Blog.recent.with_rich_text_body_and_embeds.page(params[:page]).per(5)
     else
-      @blogs = Blog.published.recent.page(params[:page]).per(5)
+      @blogs = Blog.published.recent.with_rich_text_body_and_embeds.page(params[:page]).per(5)
     end
     @page_title = "My Portfolio Blog"
   end
@@ -77,7 +77,7 @@ class BlogsController < CommentsController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :body, :topic_id, :status)
+    params.require(:blog).permit(:title, :body, :topic_id, :status, images: [])
   end
 
   def set_sidebar_topics

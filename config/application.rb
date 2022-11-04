@@ -1,9 +1,6 @@
 require_relative "boot"
 
 require "rails/all"
-require "dotenv-rails"
-require "action_view/railtie"
-require "action_cable/engine"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -14,6 +11,8 @@ module PortfolioApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.eager_load_paths << "#{Rails.root}/lib"
+    config.active_storage.variant_processor = :mini_magick
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
