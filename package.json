@@ -19,6 +19,7 @@
 		"stimulus": "npm:@hotwired/stimulus",
 		"stimulus_reflex": "3.5.0-pre8",
 		"trix": "^2.0.0-beta.0",
+		"typed.js": "^2.0.12",
 		"vanilla-nested": "^1.7.0"
 	},
 	"scripts": {
