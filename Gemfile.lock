@@ -386,6 +386,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  aws-sdk-s3
   bootsnap
   bootstrap (= 4.0.0.alpha6)
   cable_ready (~> 5.0.pre8)

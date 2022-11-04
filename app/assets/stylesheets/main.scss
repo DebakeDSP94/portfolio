@@ -343,3 +343,16 @@ h6,
 .middle {
 	margin-bottom: 30px;
 }
+
+.skill {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.skills {
+	border: solid 1px darkgrey;
+	border-radius: 5px;
+	padding: 5px;
+	margin-top: 10px;
+}
