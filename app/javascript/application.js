@@ -17,7 +17,6 @@ window.bootstrap = bootstrap;
 import 'vanilla-nested';
 
 import './controllers';
-import './lib/typed';
 console.log('application js here');
 
 import * as ActiveStorage from '@rails/activestorage';
