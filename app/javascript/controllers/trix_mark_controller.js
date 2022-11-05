@@ -2,13 +2,21 @@ console.log('trix_mark here');
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-	static targets = ['source'];
+	static targets = ['source', 'readbtn'];
 
 	connect() {
 		document.addEventListener(
 			'DOMContentLoaded',
 			this.applyFormattingToPreBlocks()
 		);
+	}
+
+	btnClick() {
+		document.addEventListener(
+			'DOMContentLoaded',
+			this.applyFormattingToPreBlocks()
+		);
+		Prism.highlightAll();
 	}
 
 	applyFormattingToPreBlocks = () => {

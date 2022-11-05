@@ -15,3 +15,6 @@ application.register('hello', HelloController);
 
 import TrixMarkController from './trix_mark_controller.js';
 application.register('trix-mark', TrixMarkController);
+
+import ReadMore from 'stimulus-read-more';
+application.register('read-more', ReadMore);
