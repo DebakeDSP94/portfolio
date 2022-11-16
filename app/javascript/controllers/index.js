@@ -18,3 +18,6 @@ application.register('trix-mark', TrixMarkController);
 
 import ReadMore from 'stimulus-read-more';
 application.register('read-more', ReadMore);
+
+import DraggableController from './draggable_controller';
+application.register('draggable', DraggableController);
