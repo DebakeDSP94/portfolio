@@ -7,8 +7,8 @@ import { application } from './application';
 import AlertController from './alert_controller.js';
 application.register('alert', AlertController);
 
-import DragController from './drag_controller.js';
-application.register('drag', DragController);
+// import DragController from './drag_controller.js';
+// application.register('drag', DragController);
 
 import HelloController from './hello_controller.js';
 application.register('hello', HelloController);
@@ -19,5 +19,5 @@ application.register('trix-mark', TrixMarkController);
 import ReadMore from 'stimulus-read-more';
 application.register('read-more', ReadMore);
 
-import DraggableController from './draggable_controller';
-application.register('draggable', DraggableController);
+// import DraggableController from './draggable_controller';
+// application.register('draggable', DraggableController);
