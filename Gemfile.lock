@@ -98,7 +98,9 @@ GEM
       aws-sigv4 (~> 1.4)
     aws-sigv4 (1.5.2)
       aws-eventstream (~> 1, >= 1.0.2)
+    base64 (0.3.0)
     bcrypt (3.1.18)
+    bigdecimal (4.1.2)
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
@@ -227,6 +229,7 @@ GEM
     minitest (5.16.3)
     msgpack (1.6.0)
     multipart-post (2.2.3)
+    mutex_m (0.3.0)
     naught (1.1.0)
     net-imap (0.3.1)
       net-protocol
@@ -237,8 +240,9 @@ GEM
     net-smtp (0.3.2)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.9-x86_64-linux)
+    nokogiri (1.19.3-x86_64-linux-gnu)
       racc (~> 1.4)
+    observer (0.1.2)
     orm_adapter (0.5.0)
     petergate (3.0.0)
       activerecord (> 4.0.0)
@@ -387,6 +391,8 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-s3
+  base64
+  bigdecimal
   bootsnap
   bootstrap (= 4.0.0.alpha6)
   cable_ready (~> 5.0.pre8)
@@ -409,6 +415,8 @@ DEPENDENCIES
   jsbundling-rails
   kaminari (~> 1.2, >= 1.2.2)
   mini_magick (~> 4.11)
+  mutex_m
+  observer
   petergate (~> 3.0)
   pg (~> 1.1)
   pry-byebug
@@ -430,7 +438,7 @@ DEPENDENCIES
   wilson_view_tool (~> 0.1.0)
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.4.4p34
 
 BUNDLED WITH
    2.3.21

@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.2"
+ruby "3.4.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
@@ -117,3 +117,9 @@ gem "hotwire-rails", "~> 0.1.3"
 gem "cable_ready", "~> 5.0.pre8"
 
 gem "aws-sdk-s3", require: false
+
+# Ruby 3.4 extracted these from stdlib — must be explicit gems now
+gem "base64"
+gem "mutex_m"
+gem "bigdecimal"
+gem "observer"
