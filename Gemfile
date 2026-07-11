@@ -70,9 +70,10 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
+  gem "selenium-webdriver", ">= 4.11"
 end
+
+gem "ostruct"
 
 gem "stimulus_reflex", "= 3.5.0.pre8"
 
@@ -123,3 +124,6 @@ gem "base64"
 gem "mutex_m"
 gem "bigdecimal"
 gem "observer"
+group :development do
+  gem "foreman"
+end
