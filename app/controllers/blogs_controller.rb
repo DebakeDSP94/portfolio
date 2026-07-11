@@ -2,7 +2,7 @@ class BlogsController < CommentsController
   before_action :set_blog, only: %i[ show edit update destroy toggle_status ]
   before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toggle_status]
   layout "blog"
-  access all: [:show, :index], user: { except: [:destroy, :new, :create, :update, :edit, :toggle_status] }, admin: :all, testing: { except: [:destroy, :create, :update]}
+  access all: [:show, :index], user: { except: [:destroy, :new, :create, :update, :edit, :toggle_status] }, admin: :all, testing: { except: [:destroy, :create, :update, :toggle_status]}
 
   def index
     if logged_in?(:admin) || logged_in?(:testing)
@@ -62,12 +62,19 @@ class BlogsController < CommentsController
   end
 
   def toggle_status
-    if @blog.draft? && logged_in?(:admin)
-      @blog.published!
-    elsif @blog.published? && logged_in?(:admin)
-      @blog.draft!
+    @blog.published? ? @blog.draft! : @blog.published!
+    message = @blog.published? ? "“#{@blog.title}” is now published." : "“#{@blog.title}” is now unpublished."
+
+    respond_to do |format|
+      format.turbo_stream do
+        flash.now[:success] = message
+        render turbo_stream: [
+          turbo_stream.replace(helpers.dom_id(@blog, :status_toggle), partial: "blogs/status_toggle", locals: { blog: @blog }),
+          turbo_stream.append("flash-container", partial: "shared/flash", locals: { level: :success, content: message })
+        ]
+      end
+      format.html { redirect_to blogs_url, success: message }
     end
-    redirect_to blogs_url, success: 'Post status has been updated.'
   end
 
   private
